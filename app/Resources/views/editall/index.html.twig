@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-push-3 col-md-6" style="font-size: 16pt;">
+            <table class="table table-striped table-condensed table-bordered table-hover col-md-10 ">
+                <h1>Routes</h1>
+                {% for rout in routes %}
+                    <tr>
+                        <td class="col-md-2">{{ rout.route }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <table class="table table-striped table-condensed table-bordered table-hover col-md-10 ">
+                <h1>Stops</h1>
+                {% for stp in stops %}
+                    <tr>
+                        <td>{{ stp.name }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <table class="table table-striped table-condensed table-bordered table-hover col-md-10 ">
+                <h1>Prices</h1>
+                {% for prc in prices %}
+                    <tr>
+                        <td>{{ prc.stopPrice }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}
