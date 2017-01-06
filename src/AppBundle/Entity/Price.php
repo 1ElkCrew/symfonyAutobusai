@@ -40,6 +40,7 @@ class Price
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\RouteStop")
+     *
      */
     private $stop2;
 
