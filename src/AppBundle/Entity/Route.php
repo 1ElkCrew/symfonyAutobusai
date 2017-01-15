@@ -121,6 +121,11 @@ class Route
         $this->stops = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->route;
+    }
+
     /**
      * Add stop
      *
@@ -153,5 +158,53 @@ class Route
     public function getStops()
     {
         return $this->stops;
+    }
+
+    /**
+     * Set endTime
+     *
+     * @param \DateTime $endTime
+     *
+     * @return Route
+     */
+    public function setEndTime($endTime)
+    {
+        $this->endTime = $endTime;
+
+        return $this;
+    }
+
+    /**
+     * Get endTime
+     *
+     * @return \DateTime
+     */
+    public function getEndTime()
+    {
+        return $this->endTime;
+    }
+
+    /**
+     * Set price
+     *
+     * @param string $price
+     *
+     * @return Route
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->price;
     }
 }

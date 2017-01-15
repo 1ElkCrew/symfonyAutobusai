@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="col-md-push-3 col-md-6" id="wrapper">
+        {% form_theme form 'bootstrap_3_layout.html.twig' %}
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

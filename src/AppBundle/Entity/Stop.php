@@ -34,11 +34,6 @@ class Stop
     private $stops;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\RouteStop", mappedBy="route")
-     */
-    private $routes;
-
-    /**
      * Get id
      *
      * @return int
@@ -76,40 +71,40 @@ class Stop
      */
     public function __construct()
     {
-        $this->routes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->stops = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add route
+     * Add stop
      *
-     * @param \AppBundle\Entity\Route $route
+     * @param \AppBundle\Entity\RouteStop $stop
      *
      * @return Stop
      */
-    public function addRoute(\AppBundle\Entity\Route $route)
+    public function addStop(\AppBundle\Entity\RouteStop $stop)
     {
-        $this->routes[] = $route;
+        $this->stops[] = $stop;
 
         return $this;
     }
 
     /**
-     * Remove route
+     * Remove stop
      *
-     * @param \AppBundle\Entity\Route $route
+     * @param \AppBundle\Entity\RouteStop $stop
      */
-    public function removeRoute(\AppBundle\Entity\Route $route)
+    public function removeStop(\AppBundle\Entity\RouteStop $stop)
     {
-        $this->routes->removeElement($route);
+        $this->stops->removeElement($stop);
     }
 
     /**
-     * Get routes
+     * Get stops
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getRoutes()
+    public function getStops()
     {
-        return $this->routes;
+        return $this->stops;
     }
 }

@@ -25,6 +25,7 @@ class RouteStop
      * @var string
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Stop", inversedBy="routes")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      *
      */
     private $stop;
@@ -131,6 +132,11 @@ class RouteStop
     public function getPlace()
     {
         return $this->place;
+    }
+
+    public function __toString()
+    {
+        return 'bla';
     }
 }
 

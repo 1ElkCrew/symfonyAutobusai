@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="col-md-push-3 col-md-6" id="wrapper">
+        <h1>Delete route:</h1>
+        <br><span style="font-size: 20pt;">
+        ID: {{ route.id }}
+        <br>Route: {{ route.route }}</span>
+        <div id="container">
+            {% form_theme form 'bootstrap_3_layout.html.twig' %}
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        <a class="btn btn-sm btn-default" href="{{ path('edit_page') }}">Cancel</a>
+        </div>
+    </div>
+{% endblock %}
